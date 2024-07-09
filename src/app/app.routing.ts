@@ -11,6 +11,7 @@ import { TypedParamDisplayComponent } from './concept-demos/url-params/typed-par
 import { AsyncResolvedParamDisplayComponent } from './concept-demos/url-params/async-resolved-param-display.component';
 import { StudentService } from './concept-demos/url-params/student.service';
 import { ProgrammaticRoutingComponent } from './concept-demos/programmatic-routing.component';
+import { FirstRouteComponent } from './concept-demos/first-route.component';
 
 export const appRouting: Ng2StateDeclaration[] = [
 	{
@@ -22,6 +23,11 @@ export const appRouting: Ng2StateDeclaration[] = [
 		name: 'realWorld',
 		url: '/real-world',
 		component: RealWorldComponent,
+	},
+	{
+		name: 'conceptDemos.firstRoute',
+		url: '/first-route',
+		component: FirstRouteComponent,
 	},
 	{
 		name: 'conceptDemos.routeOne',
@@ -45,6 +51,8 @@ export const appRouting: Ng2StateDeclaration[] = [
 	},
 	{
 		name: 'conceptDemos.urlParams.query',
+		// If you want multiple query parameters
+		// url: '/query?value&value2&value3',
 		url: '/query?value',
 		component: QueryParamDisplayComponent,
 		params: {

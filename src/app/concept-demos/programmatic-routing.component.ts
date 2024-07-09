@@ -13,6 +13,7 @@ export class ProgrammaticRoutingComponent {
 
 	handleLinkClick(event: MouseEvent) {
 		event.preventDefault();
+		// Similar to uiSref="conceptDemos.routeOne"
 		this.stateService.go('conceptDemos.routeOne');
 	}
 
