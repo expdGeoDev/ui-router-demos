@@ -12,6 +12,7 @@ import { AsyncResolvedParamDisplayComponent } from './concept-demos/url-params/a
 import { StudentService } from './concept-demos/url-params/student.service';
 import { ProgrammaticRoutingComponent } from './concept-demos/programmatic-routing.component';
 import { FirstRouteComponent } from './concept-demos/first-route.component';
+import { StateParamsComponent } from './concept-demos/url-params/state-params.component';
 
 export const appRouting: Ng2StateDeclaration[] = [
 	{
@@ -61,6 +62,24 @@ export const appRouting: Ng2StateDeclaration[] = [
 				value: 'Default value',
 			},
 		},
+	},
+	{
+		name: 'conceptDemos.urlParams.stateParams',
+		url: '/state-params',
+		component: StateParamsComponent,
+		params: {
+			value: {
+				type: 'any',
+				value: 'default',
+			},
+		},
+		resolve: [
+			{
+				token: 'value',
+				deps: [Transition],
+				resolveFn: (t: Transition) => t.params()['value'],
+			},
+		],
 	},
 	{
 		name: 'conceptDemos.urlParams.typedString',
